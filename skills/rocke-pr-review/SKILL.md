@@ -81,8 +81,10 @@ failed review, not a clean one.**
 - **Green ≠ done** (§G): CI, host and compile checks are necessary, not sufficient. C++ is
   often not built in CI (a skip is not a pass). Kernel work is done only on silicon (fp32
   reference, bf16 tolerance).
-- **No perf numbers** (§E★): none, absolute or relative, including vs AITER, in code,
-  commit messages or the PR description.
+- **Perf evidence** (§E★): no absolute numbers in any public artifact. Relative results
+  (ratios, % changes) only in the PR description or a qualifying benchmark/result doc, with
+  every arm numerically gated on silicon and the scope stated; code comments and commit
+  messages stay qualitative.
 - **A bug is a CLASS** (§C★): a fix at one site is incomplete until you grep the C++ twin,
   the other arch's helper, and every sibling deciding the same invariant.
 - **Verify first-hand**: trace `file:line` and confirm control flow; never relay a

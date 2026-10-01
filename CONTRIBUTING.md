@@ -21,9 +21,16 @@ The checklist is `skills/rocke-pr-review/checklist.md`. It is the single source 
 
 ## Never include
 
-- Measured performance values, absolute or relative (including vs AITER).
-- Customer or product codenames.
+- Absolute performance values (latency, throughput, TFLOP/s, bandwidth). Write lessons
+  qualitatively; a relative factor is fine only when the lesson needs it.
+- Customer information, product/marketing/SKU names or internal code names (use gfx target
+  names such as `gfx942`), CU counts, clocks or power figures.
+- Internal links or internal tool paths (Jira, Confluence, Perforce, internal repos). Jira IDs
+  as plain text are fine.
 - Personal or process notes.
+
+This repo is public: AMD's public-data rules and rocKE `platform/AGENTS.md` §Compliance apply
+to every file, commit message and PR here.
 
 ## Before you open the PR
 
