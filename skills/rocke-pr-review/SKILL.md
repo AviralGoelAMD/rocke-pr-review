@@ -52,6 +52,11 @@ failed review, not a clean one.**
    - If your tool can run subagents, start one per section, all in parallel.
    - If it cannot, grade the sections one at a time; finish and print one section's table
      with its `graded X/Y` before starting the next.
+   - **Reviewing several PRs, or running inside a subagent?** The fan-out belongs to the
+     top-level caller: start one reviewer per (PR × section), not one agent per PR. A
+     subagent handed a whole PR usually cannot start its own subagents and ends up grading
+     ~100 items alone, which is the skim mode this skill exists to stop. Split a section with
+     more than ~20 items (today §G) into two reviewers.
    - Give each reviewer: its section's items verbatim, the diff, the touched files, the
      grading context, and the §H or §J instructions below if it owns that section. Each
      returns its full table with `graded X/Y`; nothing summarized away.
