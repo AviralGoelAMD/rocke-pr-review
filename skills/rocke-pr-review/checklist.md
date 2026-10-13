@@ -133,6 +133,7 @@ Run a generic/AI review first; this covers what those miss.
 - [ ] Coverage = union(curated, generated); the rest is a blind spot closed upstream by hypothesis.
 - [ ] Keep both "shipped" and "achievable" columns — the delta says faster-kernel vs better-routing.
 - [ ] A baked search result is a snapshot that drifts — be explicit snapshot vs live; keep a regen path.
+- [ ] ★ Generic interface over hardware pattern — an op/API named after one instruction is suspect: if it is a special case of a known general primitive (CUDA `__shfl_xor_sync` & co.), expose the general one, pick the instruction at LOWERING per target, reject unsupported parameters loudly. Prove the equivalence by enumeration, don't assert it. (#13557 CongMa13: `row_mirror` ≡ XOR 15, `row_half_mirror` ≡ XOR 7; the dedicated op was deleted.)
 
 ## J. Design & algorithm documents (specs, `ALGORITHM.md`, `DESIGN.md`)
 > **A design doc is a reviewable artifact, not a README.** Its equations, symbols, constants and novelty claims can be *false*, and most are mechanically checkable. A docs-only diff is the one shape where an A–I pass grades `N/A` almost everywhere and returns green having verified nothing — so on a Markdown-only PR this section is the review. (#11807: ten reviewer catches, zero from our gate.)
