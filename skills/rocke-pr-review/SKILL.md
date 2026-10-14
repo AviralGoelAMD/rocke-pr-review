@@ -100,7 +100,8 @@ failed review, not a clean one.**
 A fix pushed to satisfy a reviewer is a new diff. Grade it from the top: it is late, it
 feels small, and it is where defects concentrate. Code written to make a claim checkable is
 itself unverified (grade it as a deliverable). A hoist or refactor must preserve failure
-modes, not only success paths.
+modes, not only success paths. A follow-up PR written to answer another PR's review is the
+same case: gate it before it opens, however small, test-only or comment-only it looks.
 
 ## Common mistakes (skim modes — reject these)
 
